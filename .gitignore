@@ -1,5 +1,58 @@
+# img
+
 *.png
 
-.DS_Store
-
 *.txt
+
+# some image need for the sample
+./bacteria_data/train/images/2.png
+./bacteria_data/train/images/31.png
+./bacteria_data/train/images/53.png
+./bacteria_data/train/images/104.png
+
+./bacteria_data/train/labels/2.txt
+./bacteria_data/train/labels/31.txt
+./bacteria_data/train/labels/53.txt
+./bacteria_data/train/labels/104.txt
+
+./make_bacteria_map/S.\ aureus_crop/0831\ 1_\ s7.4.png
+./make_bacteria_map/S.\ aureus_crop/0919\ s4.9.png
+./make_bacteria_map/S.\ aureus_crop/0901\ S.\ au\ s3.12.png
+./make_bacteria_map/S.\ aureus_crop/s6.12.png
+
+./make_bacteria_map/S.\ epidermidis_crop/s5.4.png
+./make_bacteria_map/S.\ epidermidis_crop/s6.52.png
+./make_bacteria_map/S.\ epidermidis_crop/s4.51.png
+./make_bacteria_map/S.\ epidermidis_crop/s2.6.png
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### macOS Patch ###
+# iCloud generated files
+*.icloud
