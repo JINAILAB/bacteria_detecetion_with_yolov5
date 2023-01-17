@@ -4,6 +4,8 @@
 
 *.txt
 
+!requirements.txt
+
 # some image need for the sample
 ./bacteria_data/train/images/2.png
 ./bacteria_data/train/images/31.png

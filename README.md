@@ -37,7 +37,8 @@ pip install -r requirements.txt
 
 ## train
 ---
-%cd yolov5
+```
+cd yolov5
 python train.py --img 1024 --epochs 50 --batch 32 --data ../bacteria_data/data.yaml --cfg ./models/yolov5s.yaml --weights yolov5s.pt --name bacteria_size1024
-
+```
 
