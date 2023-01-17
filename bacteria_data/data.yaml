@@ -1,5 +1,5 @@
-train: ../bacteria_data/train/images
-val: ../bacteria_data/valid/images
+train: ./train/images
+val: ./valid/images
 
 nc: 2
 names: ['aureus', 'epidermidis']

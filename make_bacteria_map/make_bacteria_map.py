@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser(description='bacteria_map')
 # 입력받을 인자값 설정 (default 값 설정가능)
 parser.add_argument('--epi_dir', type=str, default='./epidermidis_crop/*.png')
 parser.add_argument('--aur_dir', type=str, default='./aureus_crop/*.png')
-parser.add_argument('--cellcount', type=tuple, default=(40, 55), help='input 2 number (min ,  max) e.g. 8, 11')
+parser.add_argument('--cellcount', type=tuple, default=(10, 20), help='input 2 number (min ,  max) e.g. 8, 11')
 parser.add_argument('--map_count', type=int, default=300, help='how many maps you generate')
 # args 에 위의 내용 저장
 args = parser.parse_args()
@@ -28,11 +28,11 @@ print(len(epi_ls))
 
 
 
-# cell 붙이기전에 resize 해주는 과정 (h,w) : (60, 60) ~ (100, 100)
+# cell 붙이기전에 resize 해주는 과정 (h,w) : (50, 50) ~ (80, 80)
 def make_cell(img_name):
-    rn = random.uniform(0, 1) * 0.4
+    rn = random.uniform(0, 1) * 0.3
     color_img = cv2.imread(img_name, cv2.IMREAD_COLOR)
-    color_img = cv2.resize(color_img, (int(rn * 100) + 60, int(rn * 100) + 60))
+    color_img = cv2.resize(color_img, (int(rn * 100) + 50, int(rn * 100) + 50))
     return color_img
 
 
@@ -42,9 +42,9 @@ def make_cell(img_name):
 
 def make_map(file_name, background):
     if file_name.split('_')[0] =='./epidermidis':
-        cls_num = 0
-    elif file_name.split('_')[0] == './aureus':
         cls_num = 1
+    elif file_name.split('_')[0] == './aureus':
+        cls_num = 0
     
     
     cell_img = make_cell(file_name)
@@ -89,11 +89,11 @@ def make_map(file_name, background):
 # print(len(epi_ls)) 433
 # print(len(aur_ls)) 275
 
-background = np.zeros((2048, 2048, 3), dtype=np.uint8)
+background = np.zeros((1024, 1024, 3), dtype=np.uint8)
 
 
 for j in range(args.map_count):
-    background = np.zeros((2048, 2048, 3), dtype=np.uint8)
+    background = np.zeros((1024, 1024, 3), dtype=np.uint8)
     cell_num = random.randint(*args.cellcount)
     for i in range(cell_num):
         aur_order = random.randint(0, len(aur_ls)-1)
